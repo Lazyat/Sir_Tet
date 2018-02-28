@@ -11,26 +11,47 @@ public class Joueur : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
-		velociteSaut = 5;
-		vitesseMouvement = 3;
+		velociteSaut = 18;
+		vitesseMouvement = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetKeyDown(KeyCode.UpArrow)) {
-			rb.velocity = new Vector2(0, velociteSaut);
-			print("espace");
+			rb.AddForce(new Vector2(0, velociteSaut)*velociteSaut);
+
 		}
+
+
 
 		if (Input.GetKey(KeyCode.LeftArrow)) {
-			transform.Translate(Vector2.left * vitesseMouvement * Time.deltaTime);
-			print("gauche");
+			//transform.Translate(Vector2.left * vitesseMouvement * Time.deltaTime);
+			
+			if(rb.velocity.x > -8) {
+				rb.AddForce(new Vector2(-vitesseMouvement, 0)*10);
+			}
 		}
 
-		if (Input.GetKey(KeyCode.RightArrow)) {
-			transform.Translate(Vector2.right * vitesseMouvement * Time.deltaTime);
-			print("droite");
+		if(Input.GetKeyUp(KeyCode.LeftArrow)) {
+			rb.velocity = new Vector2(rb.velocity.x*0.25f, rb.velocity.y);
 		}
+		
+
+		if (Input.GetKey(KeyCode.RightArrow)) {
+			//transform.Translate(Vector2.right * vitesseMouvement * Time.deltaTime);
+			
+			if(rb.velocity.x < 8) {
+				rb.AddForce(new Vector2(vitesseMouvement, 0)*10);
+			}
+
+		}
+		if(Input.GetKeyUp(KeyCode.RightArrow)) {
+			rb.velocity = new Vector2(rb.velocity.x*0.25f, rb.velocity.y);
+		}
+		print(rb.velocity);
 	}
+
+ 	
+
 }
