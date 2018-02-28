@@ -18,7 +18,7 @@ public class Joueur : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.UpArrow)) {
 			rb.velocity = new Vector2(0, velociteSaut);
 			print("espace");
 		}
