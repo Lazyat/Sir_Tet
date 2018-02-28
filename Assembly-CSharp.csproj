@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\Joueur.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\scripts\Spawn.cs" />
      <Compile Include="Assets\scripts\descente.cs" />
+=======
+     <Compile Include="Assets\scripts\LevelManager.cs" />
+>>>>>>> edb7b0f729863b4064bd6aeb14ae2ff9ae39a64d
  <Reference Include="UnityEngine.UI">
  <HintPath>/opt/Unity-5.6.0/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
