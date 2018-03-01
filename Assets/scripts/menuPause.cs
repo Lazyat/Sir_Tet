@@ -11,9 +11,9 @@ public class menuPause : MonoBehaviour
 
     void Run()
     {
-        //  canvas = GameObject.Find("Menu");
+        canvas = GameObject.Find("Menu");
 
-        //Debug.Log(GameObject.Find("Menu").ToString());
+        Debug.Log(GameObject.Find("Menu").ToString());
 
     }
 
@@ -25,17 +25,10 @@ public class menuPause : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0f;
-            //canvas.SetActive(true);
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.Confined;
+            onGui();
         }
         else
-        {
             Time.timeScale = 1f;
-            //canvas.SetActive(false);
-            //Cursor.visible = false;
-            //Cursor.lockState = CursorLockMode.Locked;
-        }
     }
 
     public void Resume()
@@ -52,5 +45,4 @@ public class menuPause : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-
 }
